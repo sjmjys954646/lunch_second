@@ -15,13 +15,30 @@ public class CanvasManager : MonoBehaviour
     public GameObject Book_Canvas;
     public GameObject Result_Canvas;
 
-    public GameObject Firstwarningimage;
-    public GameObject Secondwarningimage;
-    public GameObject Thirdwarningimage;
+    public GameObject Ready;
+
+    private bool First_Ready=false;
+    private bool Second_Ready=false;
+    private bool Third_Ready=false;
+    private bool Forth_Ready=false;
+
 
     private void Awake()
     {
         Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);           
+    }
+
+    private void Update()
+    {
+        Check_isReady_First();
+        Check_isReady_Second();
+        Check_isReady_Third();
+        Check_isReady_Forth();
+
+        if(First_Ready == true && Second_Ready ==true && Third_Ready== true && Forth_Ready == true)
+        {
+            Ready.SetActive(true);
+        }
     }
 
     public void Home_to_Lobby()
@@ -36,82 +53,73 @@ public class CanvasManager : MonoBehaviour
         Roulette_Canvas.SetActive(true);
     }
 
-    public void Roulette_to_Firstoption()
+    public void Firstoption()
     {
         Roulette_Canvas.SetActive(false);
         Firstoption_Canvas.SetActive(true);
     }
 
-    public void Roulette_to_Secondoption()
+    public void Secondoption()
     {
         Roulette_Canvas.SetActive(false);
         Secondoption_Canvas.SetActive(true);
     }
 
-    public void Roulette_to_Thirdoption()
+    public void Thirdoption()
     {
         Roulette_Canvas.SetActive(false);
         Thirdoption_Canvas.SetActive(true);
     }
 
-    public void Roulette_to_Forthtoption()
+    public void Forthtoption()
     {
         Roulette_Canvas.SetActive(false);
         Forthoption_Canvas.SetActive(true);
     }
 
-    public void Firstoption_to_Roulette()
+    public void Check_isReady_First()
     {
-        if(Firstoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(3).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(4).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(5).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(6).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(7).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(8).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(9).GetComponent<Toggle>().isOn == false
+        if(Firstoption_Canvas.transform.GetChild(0).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(3).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(4).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(5).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(6).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(7).GetComponent<Toggle>().isOn == true ||
+            Firstoption_Canvas.transform.GetChild(8).GetComponent<Toggle>().isOn == true     
             )
         {
-            StartCoroutine("Firstwarning");
+            First_Ready = true;
         }
-        else
-        {
-            Firstoption_Canvas.SetActive(false);
-            Roulette_Canvas.SetActive(true);
-        }      
+
     }
 
-    public void Secondoption_to_Roulette()
+    public void Check_isReady_Second()
     {
-        if (Secondoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == false &&
-            Secondoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == false 
-            )
+        if(Secondoption_Canvas.transform.GetChild(0).GetComponent<Toggle>().isOn == true||
+           Secondoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == true 
+           )
         {
-            StartCoroutine("Secondwarning");
-        }
-        else
-        {
-            Secondoption_Canvas.SetActive(false);
-            Roulette_Canvas.SetActive(true);
+            Second_Ready = true;
         }
     }
 
-    public void Thirdoption_to_Roulette()
+    public void Check_isReady_Third()
     {
-        if (Thirdoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == false &&
-            Thirdoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == false &&
-            Thirdoption_Canvas.transform.GetChild(3).GetComponent<Toggle>().isOn == false &&
-            Thirdoption_Canvas.transform.GetChild(4).GetComponent<Toggle>().isOn == false
+        if(Thirdoption_Canvas.transform.GetChild(0).GetComponent<Toggle>().isOn == true||
+           Thirdoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == true ||
+           Thirdoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == true ||
+           Thirdoption_Canvas.transform.GetChild(3).GetComponent<Toggle>().isOn == true 
             )
         {
-            StartCoroutine("Thirdwarning");
+            Third_Ready = true;
         }
-        else
-        {
-            Thirdoption_Canvas.SetActive(false);
-            Roulette_Canvas.SetActive(true);
-        }       
+    }
+
+    public void Check_isReady_Forth()
+    {
+        Forth_Ready = true;
     }
 
     public void Forthoption_to_Roulette()
@@ -124,26 +132,6 @@ public class CanvasManager : MonoBehaviour
     {
         Roulette_Canvas.SetActive(false);
         Result_Canvas.SetActive(true);
-    }
-    
-    public IEnumerator Firstwarning()
-    {
-        Firstwarningimage.SetActive(true);
-        yield return new WaitForSeconds(2);
-        Firstwarningimage.SetActive(false);
-    }
-
-    public IEnumerator Secondwarning()
-    {
-        Secondwarningimage.SetActive(true);
-        yield return new WaitForSeconds(2);
-        Secondwarningimage.SetActive(false);
-    }
-
-    public IEnumerator Thirdwarning()
-    {
-        Thirdwarningimage.SetActive(true);
-        yield return new WaitForSeconds(2);
-        Thirdwarningimage.SetActive(false);
-    }
+    } 
+   
 }

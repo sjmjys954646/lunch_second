@@ -24,7 +24,7 @@ public class CheckManager : MonoBehaviour {
 
     public void StartRoulette()
     {
-        if (First.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(0).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -35,7 +35,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(2).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -46,7 +46,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(3).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(2).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -57,7 +57,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(4).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(3).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -68,7 +68,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(5).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(4).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -79,7 +79,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(6).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(5).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -90,7 +90,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(7).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(6).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -101,7 +101,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(8).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(7).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -112,7 +112,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (First.transform.GetChild(9).GetComponent<Toggle>().isOn == true)
+        if (First.transform.GetChild(8).GetComponent<Toggle>().isOn == true)
         {
             DataBase.GetComponent<Database>().Shop.ForEach(delegate (Database.Info go)
             {
@@ -123,7 +123,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Second.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
+        if (Second.transform.GetChild(0).GetComponent<Toggle>().isOn == true)
         {
             Selectedfirst.ForEach(delegate (Database.Info go)
             {
@@ -134,7 +134,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Second.transform.GetChild(2).GetComponent<Toggle>().isOn == true)
+        if (Second.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
         {
             Selectedfirst.ForEach(delegate (Database.Info go)
             {
@@ -145,7 +145,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Third.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
+        if (Third.transform.GetChild(0).GetComponent<Toggle>().isOn == true)
         {
             Selectedsecond.ForEach(delegate (Database.Info go)
             {
@@ -156,7 +156,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Third.transform.GetChild(1).GetComponent<Toggle>().isOn == true || Third.transform.GetChild(2).GetComponent<Toggle>().isOn == true)
+        if (Third.transform.GetChild(0).GetComponent<Toggle>().isOn == true || Third.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
         {
             Selectedsecond.ForEach(delegate (Database.Info go)
             {
@@ -167,7 +167,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Third.transform.GetChild(2).GetComponent<Toggle>().isOn == true)
+        if (Third.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
         {
             Selectedsecond.ForEach(delegate (Database.Info go)
             {
@@ -178,7 +178,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Third.transform.GetChild(2).GetComponent<Toggle>().isOn == true || Third.transform.GetChild(3).GetComponent<Toggle>().isOn == true)
+        if (Third.transform.GetChild(1).GetComponent<Toggle>().isOn == true || Third.transform.GetChild(2).GetComponent<Toggle>().isOn == true)
         {
             Selectedsecond.ForEach(delegate (Database.Info go)
             {
@@ -189,7 +189,7 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Third.transform.GetChild(3).GetComponent<Toggle>().isOn == true)
+        if (Third.transform.GetChild(2).GetComponent<Toggle>().isOn == true)
         {
             Selectedsecond.ForEach(delegate (Database.Info go)
             {
@@ -200,9 +200,9 @@ public class CheckManager : MonoBehaviour {
             });
         }
 
-        if (Third.transform.GetChild(4).GetComponent<Toggle>().isOn == true)
+        if (Third.transform.GetChild(3).GetComponent<Toggle>().isOn == true)
         {
-            if (Third.transform.GetChild(1).GetComponent<Toggle>().isOn == false && Third.transform.GetChild(2).GetComponent<Toggle>().isOn == false && Third.transform.GetChild(3).GetComponent<Toggle>().isOn == false)
+            if (Third.transform.GetChild(0).GetComponent<Toggle>().isOn == false && Third.transform.GetChild(1).GetComponent<Toggle>().isOn == false && Third.transform.GetChild(2).GetComponent<Toggle>().isOn == false)
             {
                 Selectedsecond.ForEach(delegate (Database.Info go)
                 {
@@ -211,7 +211,7 @@ public class CheckManager : MonoBehaviour {
             }
         }
 
-        if (Forth.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
+        if (Forth.transform.GetChild(0).GetComponent<Toggle>().isOn == true)
         {
             Selectedthird.ForEach(delegate (Database.Info go)
             {
@@ -234,9 +234,7 @@ public class CheckManager : MonoBehaviour {
             Debug.Log(go.Storename);
         });
     }
-
-        
-    
+      
 
     public void Pickrandom()
     {
@@ -293,6 +291,12 @@ public class CheckManager : MonoBehaviour {
             Camera.main.transform.position = new Vector3(-6274, 2482, -2981);
         }
     }
-
+    
+    public void Pricedelete()
+    {
+        Third.transform.GetChild(0).GetComponent<Toggle>().isOn = false;
+        Third.transform.GetChild(1).GetComponent<Toggle>().isOn = false;
+        Third.transform.GetChild(2).GetComponent<Toggle>().isOn = false;
+    }
 
 }
