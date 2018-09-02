@@ -7,11 +7,16 @@ public class Touch_OptionStep : MonoBehaviour
 {
 
     public GameObject coin1;
-    public Gameobject coin2;
-    public Gameobject coin3;
-    public Gameobject coin4;
+    public GameObject coin2;
+    public GameObject coin3;
+    public GameObject coin4;
 
     public GameObject coins;
+    public GameObject ma;
+    public GameObject checkGa;
+    public CheckManager checkScr;
+    public GameObject canvas;
+    public Animator anim;
 
     public Image swipe;
 
@@ -98,6 +103,8 @@ public class Touch_OptionStep : MonoBehaviour
     void start()
     {
         StartCoroutine(SwipeMotion());
+        anim = ma.GetComponent<Animator>();
+        checkScr = checkGa.GetComponent<CheckManager>();
     }
     IEnumerator SwipeMotion()
     {
@@ -117,7 +124,14 @@ public class Touch_OptionStep : MonoBehaviour
         coins.transform.DOMoveY(850, 0.5f).SetEase(Ease.InCirc);
         yield return new WaitForSeconds(0.5f);
 
-        //돌아가는 모션
-        //랜덤 돌리는 함수
+        anim.SetBool("Start", true);
+
+        checkScr.StartRoulette();
+        checkScr.Pickrandom();
+
+        canvas.SetActive(true);
+        canvas.transform.DOScale(0, 0);
+
+        canvas.transform.DOScale(1, 0.5f);
     }
 }
