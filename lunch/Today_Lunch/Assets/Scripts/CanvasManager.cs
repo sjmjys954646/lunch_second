@@ -15,9 +15,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject Book_Canvas;
     public GameObject Result_Canvas;
 
-    public GameObject Firstwarningimage;
-    public GameObject Secondwarningimage;
-    public GameObject Thirdwarningimage;
+    public GameObject Ready;
 
     private void Awake()
     {
@@ -62,56 +60,20 @@ public class CanvasManager : MonoBehaviour
 
     public void Firstoption_to_Roulette()
     {
-        if(Firstoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(3).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(4).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(5).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(6).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(7).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(8).GetComponent<Toggle>().isOn == false &&
-            Firstoption_Canvas.transform.GetChild(9).GetComponent<Toggle>().isOn == false
-            )
-        {
-            StartCoroutine("Firstwarning");
-        }
-        else
-        {
-            Firstoption_Canvas.SetActive(false);
-            Roulette_Canvas.SetActive(true);
-        }      
+        Firstoption_Canvas.SetActive(false);
+        Roulette_Canvas.SetActive(true);
     }
 
     public void Secondoption_to_Roulette()
     {
-        if (Secondoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == false &&
-            Secondoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == false 
-            )
-        {
-            StartCoroutine("Secondwarning");
-        }
-        else
-        {
-            Secondoption_Canvas.SetActive(false);
-            Roulette_Canvas.SetActive(true);
-        }
+        Secondoption_Canvas.SetActive(false);
+        Roulette_Canvas.SetActive(true);
     }
 
     public void Thirdoption_to_Roulette()
     {
-        if (Thirdoption_Canvas.transform.GetChild(1).GetComponent<Toggle>().isOn == false &&
-            Thirdoption_Canvas.transform.GetChild(2).GetComponent<Toggle>().isOn == false &&
-            Thirdoption_Canvas.transform.GetChild(3).GetComponent<Toggle>().isOn == false &&
-            Thirdoption_Canvas.transform.GetChild(4).GetComponent<Toggle>().isOn == false
-            )
-        {
-            StartCoroutine("Thirdwarning");
-        }
-        else
-        {
-            Thirdoption_Canvas.SetActive(false);
-            Roulette_Canvas.SetActive(true);
-        }       
+        Thirdoption_Canvas.SetActive(false);
+        Roulette_Canvas.SetActive(true);
     }
 
     public void Forthoption_to_Roulette()
@@ -125,25 +87,11 @@ public class CanvasManager : MonoBehaviour
         Roulette_Canvas.SetActive(false);
         Result_Canvas.SetActive(true);
     }
-    
-    public IEnumerator Firstwarning()
-    {
-        Firstwarningimage.SetActive(true);
-        yield return new WaitForSeconds(2);
-        Firstwarningimage.SetActive(false);
-    }
 
-    public IEnumerator Secondwarning()
+    public void Lobby_to_Book()
     {
-        Secondwarningimage.SetActive(true);
-        yield return new WaitForSeconds(2);
-        Secondwarningimage.SetActive(false);
-    }
-
-    public IEnumerator Thirdwarning()
-    {
-        Thirdwarningimage.SetActive(true);
-        yield return new WaitForSeconds(2);
-        Thirdwarningimage.SetActive(false);
-    }
+        Lobby_Canvas.SetActive(false);
+        Book_Canvas.SetActive(true);
+    }  
+   
 }

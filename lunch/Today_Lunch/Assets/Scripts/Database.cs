@@ -148,13 +148,6 @@ public class Database : MonoBehaviour
         Shop.Add(new Info(113, "11:40치즈스틱", "후식", "후문", "하", false, 4, "치즈스틱집"));
         Shop.Add(new Info(114, "엉터리생고기", "고깃집", "쪽문", "상", false, 2, "고깃집"));
 
-
-
-
-
-
-
-
     }
 
 }
