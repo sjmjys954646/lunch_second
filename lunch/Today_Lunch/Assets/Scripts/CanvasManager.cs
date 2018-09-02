@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject Book_Canvas;
     public GameObject Result_Canvas;
 
+    
     public GameObject Ready;
 
     private bool First_Ready=false;
@@ -37,7 +38,7 @@ public class CanvasManager : MonoBehaviour
 
         if(First_Ready == true && Second_Ready ==true && Third_Ready== true && Forth_Ready == true)
         {
-            Ready.SetActive(true);
+            Ready.GetComponent<Touch_OptionStep>().ready = true;
         }
     }
 

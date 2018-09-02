@@ -35,21 +35,21 @@ public class Database : MonoBehaviour
     {
         Shop.Add(new Info(1,"스피드반점", "중식", "쪽문", "하", false, 1, "중국음식집"));
         Shop.Add(new Info(2, "밥스", "퓨전", "쪽문", "하", false, 1, "밥과 관련된 음식"));
-        Shop.Add(new Info(3, "털보하우스", "퓨전", "쪽문", "하", false, 1, "여러 가지 다양한 음식 및 분식집"));
+        Shop.Add(new Info(3, "털보하우스", "퓨전", "쪽문", "하", false, 1, "여러 가지 음식 및 분식집"));
         Shop.Add(new Info(4, "용봉골", "한식", "쪽문", "하", false, 1, "양념된 고기집"));
         Shop.Add(new Info(5, "얌얌", "양식", "쪽문", "중", false, 1, "오므라이스 전문점"));
         Shop.Add(new Info(6, "석쇠쌈밥", "한식", "쪽문", "하", false, 1, "쌈밥 외의 찌개류"));
-        Shop.Add(new Info(7, "부리또", "양식", "쪽문", "하", false, 1, "입맛에 맞게 제작 할 수 있는 부리또"));
+        Shop.Add(new Info(7, "부리또", "양식", "쪽문", "하", false, 1, "부리또집"));
         Shop.Add(new Info(8, "사랑방하우스", "한식", "쪽문", "하", false, 1, "양념된 고기집"));
         Shop.Add(new Info(9, "나들목국밥", "한식", "쪽문", "중", false, 8, "국밥집"));
         Shop.Add(new Info(10, "파리에다녀온치킨", "치킨", "쪽문", "상", false, 1, "치킨집"));
         Shop.Add(new Info(11, "피가로", "양식", "쪽문", "상", false, 2, "화덕피자와 양식집"));
         Shop.Add(new Info(12, "봉추찜닭", "한식", "쪽문", "상", false, 2, "찜닭집"));
-        Shop.Add(new Info(13, "예원", "일식", "쪽문", "중/상", false, 2, " 카레를 먹을 수 있는 일식집"));
+        Shop.Add(new Info(13, "예원", "일식", "쪽문", "중/상", false, 2, " 카레 일식집"));
         Shop.Add(new Info(14, "화석시대", "고깃집", "쪽문", "상", false, 3, "고기집"));
         Shop.Add(new Info(15, "신쭈꾸미", "한식", "쪽문", "중/상", false, 3, "쭈꾸미집"));
         Shop.Add(new Info(16, "락희식당", "고깃집", "쪽문", "상", false, 3, "고기 및 닭구이"));
-        Shop.Add(new Info(17, "한솥", "한식", "쪽문", "하", false, 2, "도시락으로 유명하지만 다른 음식도 존재"));
+        Shop.Add(new Info(17, "한솥", "한식", "쪽문", "하", false, 2, "도시락및 다른 음식도 존재"));
         Shop.Add(new Info(18, "산쪼메", "일식", "쪽문", "중", false, 2, "라멘과 덮밥류"));
         Shop.Add(new Info(19, "오꾸닭", "치킨", "쪽문", "상", false, 2, "여러 가지 치킨요리"));
         Shop.Add(new Info(20, "최고당", "양식", "쪽문", "중", false, 2, "돈까스 요리"));
@@ -139,7 +139,7 @@ public class Database : MonoBehaviour
         Shop.Add(new Info(104, "뼈대있는집", "한식", "후문", "상", false, 7, "뼈해장국집"));
         Shop.Add(new Info(105, "이태리반점", "퓨전", "후문", "상", false, 7, "중식과 양식"));
         Shop.Add(new Info(106, "부루스타", "분식", "후문", "중", false, 7, "떡복이집"));
-        Shop.Add(new Info(107, "밥장인", "한식", "후문", "상", false, 4, "돼지고기김치찌개를 밥에 비벼먹는집"));
+        Shop.Add(new Info(107, "밥장인", "한식", "후문", "상", false, 4, "김치찌개를 밥에 비벼먹는집"));
         Shop.Add(new Info(108, "땡큐라멘", "일식", "후문", "상", false, 4, "라멘과 돈까스"));
         Shop.Add(new Info(109, "청춘다방", "분식", "후문", "상", false, 4, "떡복이집"));
         Shop.Add(new Info(110, "전대별식", "한식", "후문", "상", false, 4, "덮밥집"));
