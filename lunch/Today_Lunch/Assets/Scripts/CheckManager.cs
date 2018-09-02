@@ -20,6 +20,7 @@ public class CheckManager : MonoBehaviour {
     public int result;
     public Text resulttext;
     public Text numbertext;
+    public Text explanationtext;
 
     public void StartRoulette()
     {
@@ -208,33 +209,34 @@ public class CheckManager : MonoBehaviour {
                     Selectedthird.Add(go);
                 });
             }
+        }
 
-            if (Forth.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
+        if (Forth.transform.GetChild(1).GetComponent<Toggle>().isOn == true)
+        {
+            Selectedthird.ForEach(delegate (Database.Info go)
             {
-                Selectedthird.ForEach(delegate (Database.Info go)
+                Selectedforth.Add(go);
+            });
+        }
+        else
+        {
+            Selectedthird.ForEach(delegate (Database.Info go)
+            {
+                if (go.Deliever == false)
                 {
                     Selectedforth.Add(go);
-                });
-            }
-            else
-            {
-                Selectedthird.ForEach(delegate (Database.Info go)
-                {
-                    if (go.Deliever == false)
-                    {
-                        Selectedforth.Add(go);
-                    }
-                });
-            }
-
-            Selectedforth.ForEach(delegate (Database.Info go)
-            {
-                Debug.Log(go.Storename);
+                }
             });
         }
 
-        
+        Selectedforth.ForEach(delegate (Database.Info go)
+        {
+            Debug.Log(go.Storename);
+        });
     }
+
+        
+    
 
     public void Pickrandom()
     {
@@ -248,7 +250,7 @@ public class CheckManager : MonoBehaviour {
 
         numbertext.text = count + "개 중";
         resulttext.text = Selectedforth[result].Storename;
-
+        explanationtext.text = Selectedforth[result].Explanation;
         //area1 - 6142 1217 -2981
         //area2 - 4398 2600
         //area3 - 4267 1348
@@ -291,4 +293,6 @@ public class CheckManager : MonoBehaviour {
             Camera.main.transform.position = new Vector3(-6274, 2482, -2981);
         }
     }
+
+
 }
