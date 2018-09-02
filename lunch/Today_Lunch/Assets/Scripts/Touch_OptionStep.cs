@@ -130,7 +130,7 @@ public class Touch_OptionStep : MonoBehaviour
         checkScr.Pickrandom();
 
         canvas.SetActive(true);
-        canvas.transform.DOScale(0, 0);
+        canvas.transform.localScale = new Vector3(0, 0, 0);
 
         canvas.transform.DOScale(1, 0.5f);
     }

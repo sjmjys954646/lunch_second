@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,11 @@ public class CanvasManager : MonoBehaviour
 
     
     public GameObject Ready;
+    public GameObject mapStep;
+    public GameObject roulStep;
+
+    public Image startCanvasImg;
+    public Text startCanvasInfor;
 
     private bool First_Ready=false;
     private bool Second_Ready=false;
@@ -26,7 +32,25 @@ public class CanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);           
+        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
+        Application.targetFrameRate = 30;
+        QualitySettings.vSyncCount = 0;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(StartCanvasMotion());
+    }
+
+    IEnumerator StartCanvasMotion()
+    {
+        Home_Canvas.SetActive(true);
+        startCanvasImg.DOFade(1, 2f);
+        yield return new WaitForSeconds(1.5f);
+        startCanvasInfor.DOFade(1, 1.5f);
+        yield return new WaitForSeconds(3f);
+        Home_Canvas.SetActive(false);
+        Lobby_Canvas.SetActive(true);
     }
 
     private void Update()
@@ -42,40 +66,23 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    public void Home_to_Lobby()
-    {
-        Home_Canvas.SetActive(false);
-        Lobby_Canvas.SetActive(true);
-    }
 
     public void Lobby_to_Roulette()
     {
         Lobby_Canvas.SetActive(false);
         Roulette_Canvas.SetActive(true);
+        roulStep.SetActive(true);
     }
 
-    public void Firstoption()
+    public void Lobby_to_Map()
     {
-        Roulette_Canvas.SetActive(false);
-        Firstoption_Canvas.SetActive(true);
+        Lobby_Canvas.SetActive(false);
+        mapStep.SetActive(true);
     }
 
-    public void Secondoption()
+    public void Lobby_to_Exit()
     {
-        Roulette_Canvas.SetActive(false);
-        Secondoption_Canvas.SetActive(true);
-    }
-
-    public void Thirdoption()
-    {
-        Roulette_Canvas.SetActive(false);
-        Thirdoption_Canvas.SetActive(true);
-    }
-
-    public void Forthtoption()
-    {
-        Roulette_Canvas.SetActive(false);
-        Forthoption_Canvas.SetActive(true);
+        Application.Quit();
     }
 
     public void Check_isReady_First()
