@@ -69,10 +69,13 @@ public class Touch_OptionStep : MonoBehaviour
                 }
                 else
                 {
-                    if (step == 4 && ready && !temp2)
+                    if(end_y > begin_y)
                     {
-                        temp2 = true;
-                        StartCoroutine(StartStep());
+                        if (step == 4 && ready && !temp2)
+                        {
+                            temp2 = true;
+                            StartCoroutine(StartStep());
+                        }
                     }
                 }
 
