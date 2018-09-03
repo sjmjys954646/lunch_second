@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Touch_MapControl : MonoBehaviour {
 
-    private float moveSpeed = 2f;
+    private float moveSpeed = 6000f;
     public Transform cam;
 
     Vector2 prevPos = Vector2.zero;
@@ -29,7 +29,7 @@ public class Touch_MapControl : MonoBehaviour {
             }
 
             Vector2 dir = (Input.GetTouch(0).position - prevPos).normalized;
-            Vector3 vec = new Vector3(dir.x, 0, dir.y);
+            Vector3 vec = new Vector3(dir.x, dir.y, 0);
 
             cam.position -= vec * moveSpeed * Time.deltaTime;
             prevPos = Input.GetTouch(0).position;
@@ -44,12 +44,10 @@ public class Touch_MapControl : MonoBehaviour {
             float curDistance = Vector2.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
             float move = prevDistance - curDistance;
 
-            Vector3 pos = cam.position;
 
-            if (move < 0) pos.y -= moveSpeed * Time.deltaTime;
-            else if (move > 0) pos.y += moveSpeed * Time.deltaTime;
+            if (move < 0) Camera.main.orthographicSize -= moveSpeed * Time.deltaTime;
+            else if (move > 0) Camera.main.orthographicSize += moveSpeed * Time.deltaTime;
 
-            cam.position = pos;
             prevDistance = curDistance;
         }
     }

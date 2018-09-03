@@ -76,7 +76,7 @@ public class Touch_OptionStep : MonoBehaviour
                         if (step > 1)
                         {
                             step--;
-                            coins.transform.GetChild(step).transform.DOMove(new Vector3(coins.transform.GetChild(step + 1).position.x , coins.transform.GetChild(step).transform.position.y, 0), 0.3f).SetEase(Ease.OutQuart);
+                            coins.transform.GetChild(step).transform.DOMove(new Vector3(coins.transform.GetChild(step + 1).position.x, coins.transform.GetChild(step).transform.position.y, 0), 0.3f).SetEase(Ease.OutQuart);
                         }
 
                     }
@@ -92,7 +92,7 @@ public class Touch_OptionStep : MonoBehaviour
                 }
                 else
                 {
-                    if(end_y > begin_y)
+                    if (end_y > begin_y)
                     {
                         if (step == 4 && ready && !temp2)
                         {
@@ -150,6 +150,8 @@ public class Touch_OptionStep : MonoBehaviour
 
         checkScr.StartRoulette();
         checkScr.Pickrandom();
+
+        yield return new WaitForSeconds(1f);
 
         canvas.SetActive(true);
         canvas.transform.localScale = new Vector3(0, 0, 0);

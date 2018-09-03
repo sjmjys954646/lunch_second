@@ -33,7 +33,7 @@ public class CanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, false);
+        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
         Application.targetFrameRate = 30;
         QualitySettings.vSyncCount = 0;
     }
