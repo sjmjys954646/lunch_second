@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Touch_MapControl : MonoBehaviour {
 
-    public float moveSpeed;
+    private float moveSpeed = 2f;
     public Transform cam;
 
     Vector2 prevPos = Vector2.zero;

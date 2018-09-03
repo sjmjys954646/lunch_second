@@ -18,14 +18,19 @@ public class Touch_OptionStep : MonoBehaviour
     public GameObject coin3;
     public GameObject coin4;
 
+    public Image doneRoul;
+    public Image yetRoul;
+
     public GameObject coins;
     public GameObject ma;
     public GameObject checkGa;
     public CheckManager checkScr;
     public GameObject canvas;
     public Animator anim;
+    public GameObject rouletteCanvas;
 
     public Image swipe;
+    public GameObject pos;
 
     private float begin_x;
     private float begin_y;
@@ -66,21 +71,21 @@ public class Touch_OptionStep : MonoBehaviour
 
                 if (x > y)
                 {
-                    if (begin_x > end_x)
+                    if (begin_x < end_x)
                     {
-                        if (step < 1)
+                        if (step > 1)
                         {
                             step--;
-                            coins.transform.GetChild(step).transform.DOMove(new Vector3(1080, coins.transform.GetChild(step).transform.position.y, 0), 0.3f).SetEase(Ease.OutQuart);
+                            coins.transform.GetChild(step).transform.DOMove(new Vector3(coins.transform.GetChild(step + 1).position.x , coins.transform.GetChild(step).transform.position.y, 0), 0.3f).SetEase(Ease.OutQuart);
                         }
 
                     }
-                    else if (begin_x < end_x)
+                    else if (begin_x > end_x)
                     {
                         if (step < 4)
                         {
                             step++;
-                            coins.transform.GetChild(step - 1).transform.DOMove(new Vector3(0, coins.transform.GetChild(step - 1).transform.position.y, 0), 0.3f).SetEase(Ease.OutQuart);
+                            coins.transform.GetChild(step - 1).transform.DOMove(new Vector3(coins.transform.GetChild(0).position.x, coins.transform.GetChild(step - 1).transform.position.y, 0), 0.3f).SetEase(Ease.OutQuart);
                         }
 
                     }
@@ -115,28 +120,30 @@ public class Touch_OptionStep : MonoBehaviour
     }
 
 
-    void start()
+    private void Start()
     {
         StartCoroutine(SwipeMotion());
         anim = ma.GetComponent<Animator>();
         checkScr = checkGa.GetComponent<CheckManager>();
     }
+
     IEnumerator SwipeMotion()
     {
         while (true)
         {
             swipe.DOFade(0, 1f);
             yield return new WaitForSeconds(1);
-            swipe.DOFade(255, 1f);
+            swipe.DOFade(1, 1f);
             yield return new WaitForSeconds(1);
         }
     }
     IEnumerator StartStep()
     {
+        swipe.gameObject.SetActive(false);
         coins.transform.DOScale(0, 1);
-        coins.transform.DOMove(new Vector3(coins.transform.position.x, 1000, coins.transform.position.z), 0.5f).SetEase(Ease.OutQuad);
+        coins.transform.DOMove(new Vector3(coins.transform.position.x, ma.transform.position.y , coins.transform.position.z), 0.5f).SetEase(Ease.OutQuad);
         yield return new WaitForSeconds(0.5f);
-        coins.transform.DOMove(new Vector3(coins.transform.position.x, 850, coins.transform.position.z), 0.5f).SetEase(Ease.InCirc);
+        coins.transform.DOMove(new Vector3(coins.transform.position.x, pos.transform.position.y, coins.transform.position.z), 0.5f).SetEase(Ease.InCirc);
         yield return new WaitForSeconds(0.5f);
 
         anim.SetBool("start", true);
@@ -149,5 +156,8 @@ public class Touch_OptionStep : MonoBehaviour
 
         canvas.transform.DOScale(1, 0.5f);
         anim.SetBool("start", false);
+
+        rouletteCanvas.SetActive(false);
     }
+
 }
