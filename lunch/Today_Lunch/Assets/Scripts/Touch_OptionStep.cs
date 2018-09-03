@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class Touch_OptionStep : MonoBehaviour
 {
+    public Text debugingX;
+    public Text debugingY;
+    public Text steping;
+
+    /// <summary>
+    /// 
+    /// </summary>
 
     public GameObject coin1;
     public GameObject coin2;
@@ -39,14 +46,20 @@ public class Touch_OptionStep : MonoBehaviour
             begin = Input.GetTouch(0).position;
             begin_x = begin.x;
             begin_y = begin.y;
+
+            debugingX.text = begin_x + "";
+            debugingY.text = begin_y + "";
         }
         else if (Input.GetTouch(0).phase == TouchPhase.Ended)
         {
 
-            if (Vector3.Distance(begin, Input.GetTouch(0).position) > (Screen.width / 3))
+            if (Vector2.Distance(begin, Input.GetTouch(0).position) > (Screen.width / 3))
             {
                 end_x = Input.GetTouch(0).position.x;
                 end_y = Input.GetTouch(0).position.y;
+
+                debugingX.text = end_x + "";
+                debugingY.text = end_y + "";
 
                 float x = Mathf.Abs(end_x - begin_x);
                 float y = Mathf.Abs(end_y - begin_y);
@@ -84,6 +97,8 @@ public class Touch_OptionStep : MonoBehaviour
                     }
                 }
 
+                steping.text = step + "";
+
             }
         }
 
@@ -119,12 +134,12 @@ public class Touch_OptionStep : MonoBehaviour
     IEnumerator StartStep()
     {
         coins.transform.DOScale(0, 1);
-        coins.transform.DOMoveY(1000, 0.5f).SetEase(Ease.OutQuad);
+        coins.transform.DOMove(new Vector3(coins.transform.position.x, 1000, coins.transform.position.z), 0.5f).SetEase(Ease.OutQuad);
         yield return new WaitForSeconds(0.5f);
-        coins.transform.DOMoveY(850, 0.5f).SetEase(Ease.InCirc);
+        coins.transform.DOMove(new Vector3(coins.transform.position.x, 850, coins.transform.position.z), 0.5f).SetEase(Ease.InCirc);
         yield return new WaitForSeconds(0.5f);
 
-        anim.SetBool("Start", true);
+        anim.SetBool("start", true);
 
         checkScr.StartRoulette();
         checkScr.Pickrandom();
@@ -133,5 +148,6 @@ public class Touch_OptionStep : MonoBehaviour
         canvas.transform.localScale = new Vector3(0, 0, 0);
 
         canvas.transform.DOScale(1, 0.5f);
+        anim.SetBool("start", false);
     }
 }

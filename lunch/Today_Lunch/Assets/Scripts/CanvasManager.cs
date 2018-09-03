@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject Forthoption_Canvas;
     public GameObject Book_Canvas;
     public GameObject Result_Canvas;
+    public GameObject MapTouch_Canvas;
 
     
     public GameObject Ready;
@@ -32,7 +33,7 @@ public class CanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
+        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, false);
         Application.targetFrameRate = 30;
         QualitySettings.vSyncCount = 0;
     }
@@ -78,6 +79,7 @@ public class CanvasManager : MonoBehaviour
     {
         Lobby_Canvas.SetActive(false);
         mapStep.SetActive(true);
+        MapTouch_Canvas.SetActive(true);
     }
 
     public void Lobby_to_Exit()
