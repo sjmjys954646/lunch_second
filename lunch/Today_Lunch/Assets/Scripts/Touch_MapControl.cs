@@ -5,9 +5,17 @@ using UnityEngine;
 
 public class Touch_MapControl : MonoBehaviour
 {
+    public GameObject lobby_Canvas;
+    public GameObject result_Canvas;
+    public GameObject mapStep;
+    public GameObject mapTouch;
+    public GameObject mapUi;
+
     public GameObject uiBack;
     public GameObject upPos;
     public GameObject downPos;
+    public bool state;
+    // false 도감 true 결과
 
     private bool emergy = true;
 
@@ -26,7 +34,19 @@ public class Touch_MapControl : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Escape))
         {
-
+            if (state)
+            {
+                result_Canvas.SetActive(false);
+                mapStep.SetActive(false);
+                mapTouch.SetActive(false);
+                mapUi.SetActive(false);
+            }
+            else if (!state)
+            {
+                lobby_Canvas.SetActive(true);
+                mapStep.SetActive(false);
+                mapTouch.SetActive(false);
+            }
         }
     }
 
