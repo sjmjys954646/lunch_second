@@ -248,7 +248,7 @@ public class CheckManager : MonoBehaviour {
 
         numbertext.text = count + "개 중";
         resulttext.text = Selectedforth[result].Storename;
-        explanationtext.text = Selectedforth[result].Explanation;
+        explanationtext.text = "설명: " + Selectedforth[result].Explanation;
         //area1 - 6142 1217 -2981
         //area2 - 4398 2600
         //area3 - 4267 1348
