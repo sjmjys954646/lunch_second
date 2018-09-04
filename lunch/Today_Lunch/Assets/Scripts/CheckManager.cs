@@ -246,9 +246,11 @@ public class CheckManager : MonoBehaviour {
         result = Random.Range(0, count);
         Debug.Log(result);
 
-        numbertext.text = count + "개 중";
+        numbertext.text = count + "개 음식점 중";
         resulttext.text = Selectedforth[result].Storename;
         explanationtext.text = "설명: " + Selectedforth[result].Explanation;
+      
+        
         //area1 - 6142 1217 -2981
         //area2 - 4398 2600
         //area3 - 4267 1348
