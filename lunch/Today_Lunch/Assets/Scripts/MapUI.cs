@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapUI : MonoBehaviour {
 
@@ -16,14 +17,14 @@ public class MapUI : MonoBehaviour {
         Data = DataOb.GetComponent<CheckManager>();
     }
 
-    private void GetData()
+    public void GetData()
     {
         //result 가게이름 따로 Data.resulttext로 불러오기 가능
         resultnum = Data.result;
         result = Data.Selectedforth[resultnum].Storename;
     }
 
-    private void MapmoveButton()
+    public void MapmoveButton()
     {
         if (Data.Selectedforth[resultnum].Area == 1)
         {

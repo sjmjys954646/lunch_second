@@ -67,7 +67,7 @@ public class Database : MonoBehaviour
         Shop.Add(new Info(32, "서래", "고깃집", "쪽문", "상", false, 2,"고기집"));
         Shop.Add(new Info(33, "놀부보쌈", "한식", "쪽문", "상", false, 2, "보쌈집"));
         Shop.Add(new Info(34, "샤브향", "한식", "쪽문", "상", false, 2, "샤브샤브"));
-        Shop.Add(new Info(35, "오라구", "양식", "쪽문", "상", false, 2, "양식집"));
+        Shop.Add(new Info(35, "오라구", "양식", "쪽문", "상", false, 2, "일반적인 양식집"));
         Shop.Add(new Info(36, "노랑통닭", "치킨", "쪽문", "상", false, 3, "치킨집"));
         Shop.Add(new Info(37, "치킨퐁", "치킨", "쪽문", "상", false, 2, "치킨집"));
         Shop.Add(new Info(38, "만계치킨", "치킨", "쪽문", "상", false, 3, "치킨집"));
@@ -147,14 +147,6 @@ public class Database : MonoBehaviour
         Shop.Add(new Info(112, "마루와플", "후식", "후문", "하", false, 5, "와플집"));
         Shop.Add(new Info(113, "11:40치즈스틱", "후식", "후문", "하", false, 4, "치즈스틱집"));
         Shop.Add(new Info(114, "엉터리생고기", "고깃집", "쪽문", "상", false, 2, "고깃집"));
-
-
-
-
-
-
-
-
     }
 
 }
