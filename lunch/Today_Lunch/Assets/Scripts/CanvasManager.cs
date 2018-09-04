@@ -68,6 +68,12 @@ public class CanvasManager : MonoBehaviour
     }
 
 
+    public void Result_to_Map()
+    {
+        Result_Canvas.SetActive(false);
+        mapStep.SetActive(true);
+    }
+
     public void Lobby_to_Roulette()
     {
         Lobby_Canvas.SetActive(false);
