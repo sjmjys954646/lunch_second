@@ -12,9 +12,12 @@ public class MapUI : MonoBehaviour {
     private int resultnum;
     private int num;
 
+    public Text Storename;
+
     private void Start()
     {
         Data = DataOb.GetComponent<CheckManager>();
+        GetData();
     }
 
     public void GetData()
@@ -22,6 +25,7 @@ public class MapUI : MonoBehaviour {
         //result 가게이름 따로 Data.resulttext로 불러오기 가능
         resultnum = Data.result;
         result = Data.Selectedforth[resultnum].Storename;
+        Storename.text = "("+Data.Selectedforth[resultnum].Foodkind+")"+"  "+result;
     }
 
     public void MapmoveButton()
