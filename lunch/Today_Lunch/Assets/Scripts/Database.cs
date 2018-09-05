@@ -26,7 +26,7 @@ public class Database : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         WriteInfo();
     }
