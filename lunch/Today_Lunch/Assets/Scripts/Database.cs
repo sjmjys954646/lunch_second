@@ -26,7 +26,7 @@ public class Database : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         WriteInfo();
     }
@@ -58,7 +58,7 @@ public class Database : MonoBehaviour
         Shop.Add(new Info(23, "69식당", "고깃집", "쪽문", "상", false, 3, "고깃집"));
         Shop.Add(new Info(24, "새마을식당", "고깃집", "쪽문", "중/상", false, 2, "고기와 7분김치찌개"));
         Shop.Add(new Info(25, "통큰돈까스", "양식", "쪽문", "중", false, 2, "양 많은 돈까스"));
-        Shop.Add(new Info(26, "포베이", "양식", "쪽문", "중", false, 2, "베트남 쌀국수"));
+        Shop.Add(new Info(26, "포베이", "양식", "쪽문", "상", false, 2, "베트남 쌀국수"));
         Shop.Add(new Info(27, "고수닭갈비", "한식", "쪽문", "상", false, 2, "닭갈비집"));
         Shop.Add(new Info(28, "밥풀", "한식", "쪽문", "중", false, 3, "여러가지 밥관련 요리"));
         Shop.Add(new Info(29, "참돈", "고깃집", "쪽문", "상", false, 3, "고기 무한리필"));
