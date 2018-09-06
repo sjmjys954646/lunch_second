@@ -1941,7 +1941,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 572532891}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1364409836}
+        m_MethodName: Result_to_Map
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &572532891
@@ -8731,9 +8742,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4ec275af45d9b48abb969e6f9cab08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobby_Canvas: {fileID: 246388576}
+  result_Canvas: {fileID: 1634207422}
+  mapStep: {fileID: 1820560364}
+  mapTouch: {fileID: 51119992}
+  mapUi: {fileID: 1324840114}
   uiBack: {fileID: 1501646322}
   upPos: {fileID: 1986556160}
   downPos: {fileID: 512752205}
+  state: 0
   cam: {fileID: 0}
 --- !u!4 &1820560366
 Transform:

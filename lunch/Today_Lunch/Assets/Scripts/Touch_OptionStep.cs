@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Touch_OptionStep : MonoBehaviour
 {
+    public GameObject lobby_Canvas;
+    public GameObject result_Canvas;
+
     public Text debugingX;
     public Text debugingY;
     public Text steping;
@@ -116,6 +119,12 @@ public class Touch_OptionStep : MonoBehaviour
         {
             temp1 = false;
             swipe.gameObject.SetActive(false);
+        }
+
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            
         }
     }
 

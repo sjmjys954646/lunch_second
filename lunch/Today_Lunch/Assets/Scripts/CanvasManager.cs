@@ -30,6 +30,8 @@ public class CanvasManager : MonoBehaviour
     private bool Third_Ready=false;
     private bool Forth_Ready=false;
 
+    private bool lobby = true;
+
 
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class CanvasManager : MonoBehaviour
 
     private void Update()
     {
+
         Check_isReady_First();
         Check_isReady_Second();
         Check_isReady_Third();
@@ -64,6 +67,11 @@ public class CanvasManager : MonoBehaviour
         if(First_Ready == true && Second_Ready ==true && Third_Ready== true && Forth_Ready == true)
         {
             Ready.GetComponent<Touch_OptionStep>().ready = true;
+        }
+
+        if(lobby && Input.GetKey(KeyCode.Escape))
+        {
+
         }
     }
 
